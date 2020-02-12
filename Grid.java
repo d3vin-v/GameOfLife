@@ -1,6 +1,15 @@
 
 public class Grid{
-	int x = 10;
-	boolean grid[][] = new boolean[x][x];
+	static boolean[][] grid;
+	
+	public static void createGrid(int ig) {
+		grid = new boolean[ig][ig];
+		
+	}
+	
+	public static void manualPaint(int y, int x) {
+		grid[y][x] = false;
+	}
 	
 }
+
