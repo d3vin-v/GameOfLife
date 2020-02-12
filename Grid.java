@@ -4,11 +4,16 @@ public class Grid{
 	
 	public static void createGrid(int ig) {
 		grid = new boolean[ig][ig];
-		
+		System.out.println("Grid created");
 	}
 	
 	public static void manualPaint(int y, int x) {
-		grid[y][x] = false;
+		if(!grid[y][x]) {
+			grid[y][x] = true;
+		}else {
+			grid[y][x] = false;
+		}
+		System.out.println("Point painted");
 	}
 	
 }
