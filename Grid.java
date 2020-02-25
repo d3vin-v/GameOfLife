@@ -3,10 +3,15 @@ public class Grid{
 	static boolean[][] grid;
 	static int gridSize;
 	
-	public static void createGrid(int ig) {
+	Grid(int g){
+		grid = new boolean[g][g];
+	}
+	
+	public static boolean[][] createGrid(int ig) {
 		gridSize = ig;
 		grid = new boolean[ig][ig];
 		System.out.println("Grid created");
+		return grid;
 	}
 	
 	public static void manualPaint(int y, int x) {
@@ -18,7 +23,8 @@ public class Grid{
 		System.out.println("Point painted");
 	}
 	
-	public static String toStringg() {
+	@Override
+	public String toString() {
 		String output = "";
 		String temp;
 		for(int i = grid.length - 1; i >= 0; i--) {
