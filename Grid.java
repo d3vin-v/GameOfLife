@@ -92,6 +92,3 @@ public class Grid{
 		return output;
 	}
 }
-
-//for(int i = 0; i < grid.length - 1; i++) {
-//	for(int j = grid.length - 1; j >= 0; j--) {
