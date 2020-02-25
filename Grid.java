@@ -78,8 +78,8 @@ public class Grid{
 	public String toString() {
 		String output = "";
 		String temp;
-		for(int i = grid.length - 1; i >= 0; i--) {
-			for(int j = 0; j < grid.length - 1; j++) {
+		for(int i = 0; i < grid.length - 1; i++) {
+			for(int j = grid.length - 1; j >= 0; j--) {
 				if(grid[i][j]) {
 					temp = "1";
 				}else {
@@ -92,3 +92,6 @@ public class Grid{
 		return output;
 	}
 }
+
+//for(int i = 0; i < grid.length - 1; i++) {
+//	for(int j = grid.length - 1; j >= 0; j--) {

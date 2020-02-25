@@ -5,7 +5,6 @@ public class Runner {
 		Scanner scan = new Scanner(System.in);
 		int g;
 		int menu;
-//		boolean[][] grid = null;
 		Grid grid = null;
 		
 		do { //menu
@@ -13,7 +12,6 @@ public class Runner {
 			System.out.println("1. Create grid");
 			System.out.println("2. Manually Paint");
 			System.out.println("3. Next");
-			// add "cycle time"
 			System.out.println("4. Quit");
 			menu = scan.nextInt();
 			
@@ -22,16 +20,15 @@ public class Runner {
 					System.out.println("Enter grid size: ");
 					g = scan.nextInt();
 					grid = new Grid(g);
-//					grid = Grid.createGrid(g);
 					System.out.println(grid);
 					break;
 				case 2: //manually paint
 					int y; int x;
-					System.out.println("Enter x value(Points are considered on quadrant IV): ");
+					System.out.println("Enter x value(Points are considered on quadrant I): ");
 					x = scan.nextInt();
 					System.out.println("Enter y value: ");
 					y = scan.nextInt();
-					Grid.manualPaint(y, x);
+					Grid.manualPaint(y-1, x-1);
 					System.out.println(grid);
 					break;
 				case 3: //Next
