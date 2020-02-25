@@ -34,12 +34,16 @@ public class Runner {
 					Grid.manualPaint(y, x);
 					System.out.println(grid);
 					break;
+				case 3: //Next
+					grid.next();
+					System.out.println(grid);
+					break;
 				case 4: //exit
 					System.out.println("Goodbye");
 					break;
 			}
 			
-		}while(menu < 3);
+		}while(menu < 4);
 		
 		scan.close();
 	}

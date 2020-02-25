@@ -23,6 +23,57 @@ public class Grid{
 		System.out.println("Point painted");
 	}
 	
+	void next() {
+		boolean[][] tempGrid = new boolean[rows()][cols()];
+
+        for(int row = 0; row < rows(); row++){
+            for(int col = 0; col < cols(); col++){
+                // 2 cases
+                // count neighbors
+                int neighbors = numNeighbors(row,col);
+
+                if(grid[row][col]){
+                    // 1 - alive
+                    tempGrid[row][col] = (neighbors == 2 || neighbors == 3);
+                } else {
+                    // 2 - dead
+                    tempGrid[row][col] = (neighbors == 3);
+                }
+            }
+        }
+        grid = tempGrid;
+	}
+	
+	private int numNeighbors(int row, int col){
+        int count = 0;
+        count += get(row-1, col-1)?1:0;
+        count += get(row-1, col)?1:0;
+        count += get(row-1, col+1)?1:0;
+        count += get(row, col-1)?1:0;
+        count += get(row, col+1)?1:0;
+        count += get(row+1, col-1)?1:0;
+        count += get(row+1, col)?1:0;
+        count += get(row+1, col+1)?1:0;
+
+        return count;
+    }
+	
+	int rows(){
+        return grid.length;
+    }
+
+    int cols(){
+        return grid[0].length;
+    }
+
+    void change(int row, int col) {
+        grid[row][col] = !grid[row][col];
+    }
+    
+    boolean get(int row, int col){
+        return grid[(row + rows()) % rows()][(col + cols()) % cols()];
+    }
+	
 	@Override
 	public String toString() {
 		String output = "";
@@ -40,6 +91,4 @@ public class Grid{
 		}
 		return output;
 	}
-	
 }
-
